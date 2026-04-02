@@ -1,0 +1,55 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1440" height="900" fill="#E6E0D3"/>
+<rect x="32" y="28" width="1376" height="844" rx="32" fill="#F3EEE3"/>
+<rect x="72" y="72" width="1296" height="96" rx="28" fill="#28312C"/>
+<text x="112" y="116" fill="#F3EEE3" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="18" letter-spacing="3">CONTROLE OPERACIONAL</text>
+<text x="112" y="146" fill="#FDFBF5" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="44" font-weight="700">Uniformes Tecnicos</text>
+<rect x="1060" y="90" width="248" height="56" rx="20" fill="#B08A49"/>
+<text x="1112" y="126" fill="#1F231F" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="20" font-weight="700">Nova movimentacao</text>
+<rect x="72" y="206" width="300" height="132" rx="24" fill="#F8F4EA" stroke="#C9B99A"/>
+<rect x="392" y="206" width="300" height="132" rx="24" fill="#F8F4EA" stroke="#C9B99A"/>
+<rect x="712" y="206" width="300" height="132" rx="24" fill="#F8F4EA" stroke="#C9B99A"/>
+<rect x="1032" y="206" width="336" height="132" rx="24" fill="#F8F4EA" stroke="#C9B99A"/>
+<text x="102" y="246" fill="#746A59" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="18">Pecas em estoque</text>
+<text x="102" y="306" fill="#28312C" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="54" font-weight="700">81</text>
+<text x="422" y="246" fill="#746A59" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="18">Funcionarios</text>
+<text x="422" y="306" fill="#28312C" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="54" font-weight="700">17</text>
+<text x="742" y="246" fill="#746A59" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="18">Movimentacoes</text>
+<text x="742" y="306" fill="#28312C" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="54" font-weight="700">37</text>
+<text x="1062" y="246" fill="#746A59" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="18">Descartes</text>
+<text x="1062" y="306" fill="#8A4B2A" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="54" font-weight="700">5</text>
+<rect x="72" y="374" width="768" height="454" rx="28" fill="#FFFDF8" stroke="#D4C5A8"/>
+<text x="108" y="424" fill="#6F6659" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="18" letter-spacing="2">ESTOQUE AGRUPADO</text>
+<rect x="108" y="454" width="696" height="74" rx="20" fill="#EDE4D1"/>
+<text x="136" y="500" fill="#28312C" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="28" font-weight="700">Calca</text>
+<text x="604" y="500" fill="#5E564C" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="24">Total: 40</text>
+<text x="733" y="500" fill="#8A4B2A" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="22">Abrir</text>
+<rect x="108" y="546" width="696" height="74" rx="20" fill="#28312C"/>
+<text x="136" y="592" fill="#FDFBF5" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="28" font-weight="700">Camiseta Manga Curta</text>
+<text x="576" y="592" fill="#D8D2C7" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="24">Total: 24</text>
+<text x="719" y="592" fill="#D9B36A" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="22">Aberto</text>
+<rect x="126" y="636" width="660" height="58" rx="16" fill="#F7F1E4"/>
+<text x="152" y="672" fill="#28312C" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="24" font-weight="700">P</text>
+<text x="222" y="672" fill="#6F6659" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="22">Estoque: 6</text>
+<rect x="550" y="648" width="114" height="30" rx="15" fill="#E8D7A8"/>
+<text x="579" y="669" fill="#6D5321" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="16" font-weight="700">Baixo</text>
+<rect x="678" y="646" width="86" height="34" rx="17" fill="#FFF0E6"/>
+<text x="698" y="669" fill="#8A4B2A" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="16" font-weight="700">Excluir</text>
+<rect x="126" y="706" width="660" height="58" rx="16" fill="#F7F1E4"/>
+<text x="152" y="742" fill="#28312C" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="24" font-weight="700">M</text>
+<text x="222" y="742" fill="#6F6659" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="22">Estoque: 8</text>
+<rect x="550" y="718" width="132" height="30" rx="15" fill="#DCEAD7"/>
+<text x="573" y="739" fill="#2F6A35" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="16" font-weight="700">Saudavel</text>
+<rect x="698" y="716" width="66" height="34" rx="17" fill="#FFF0E6"/>
+<text x="711" y="739" fill="#8A4B2A" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="16" font-weight="700">Del</text>
+<rect x="872" y="374" width="496" height="454" rx="28" fill="#FFFDF8" stroke="#D4C5A8"/>
+<text x="908" y="424" fill="#6F6659" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="18" letter-spacing="2">FUNCIONARIOS</text>
+<rect x="908" y="456" width="424" height="74" rx="20" fill="#EDE4D1"/>
+<text x="938" y="500" fill="#28312C" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="24" font-weight="700">ALEXANDRE C. ESSER</text>
+<text x="1192" y="500" fill="#5E564C" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="18">MANUTENCAO</text>
+<rect x="908" y="548" width="424" height="74" rx="20" fill="#EDE4D1"/>
+<text x="938" y="592" fill="#28312C" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="24" font-weight="700">AMAURI L. O. CAMPOS</text>
+<text x="1202" y="592" fill="#5E564C" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="18">GERENCIA</text>
+<rect x="908" y="726" width="230" height="54" rx="27" fill="#28312C"/>
+<text x="961" y="761" fill="#FDFBF5" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="20" font-weight="700">Ver lista completa</text>
+</svg>

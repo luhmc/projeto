@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Controle de Gerador</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="gerador">
+    <div class="background-shape background-shape-a"></div>
+    <div class="background-shape background-shape-b"></div>
+    <main class="app-shell">
+        <nav class="module-tabs" aria-label="Abas do gerador">
+            <a class="module-home-link" href="./index.html" aria-label="Voltar para a pagina inicial">⌂</a>
+            <button class="module-tab-button is-active" type="button" data-gerador-tab-target="visao-geral">Visao geral</button>
+            <button class="module-tab-button" type="button" data-gerador-tab-target="geradores">Geradores</button>
+            <button class="module-tab-button" type="button" data-gerador-tab-target="manutencoes">Manutencoes</button>
+            <button class="module-tab-button" type="button" data-gerador-tab-target="lancamentos">Lancamentos</button>
+            <button class="module-tab-button" type="button" data-gerador-tab-target="auditoria">Auditoria</button>
+            <button id="gerador-register-open" class="primary-button" type="button" hidden>Cadastrar gerador</button>
+        </nav>
+        <div id="gerador-feedback" class="gerador-feedback" aria-live="polite"></div>
+
+        <section id="gerador-tab-visao-geral" class="gerador-tab-panel is-active">
+            <section class="panel gerador-sheet-panel">
+                <div class="gerador-sheet-header">
+                    <h2 id="gerador-dashboard-title">Painel de manutencao dos geradores</h2>
+                    <p id="gerador-dashboard-subtitle">Status automatico por horas e tempo</p>
+                </div>
+                <section class="stats-grid" id="gerador-stats"></section>
+                <div id="gerador-dashboard-switcher" class="gerador-dashboard-switcher"></div>
+                <article class="gerador-sheet-focus">
+                    <p class="gerador-sheet-focus-title" id="gerador-dashboard-generator">-</p>
+                    <div class="gerador-sheet-focus-icon" id="gerador-dashboard-icon">!</div>
+                    <strong class="gerador-sheet-focus-alert" id="gerador-dashboard-alert">-</strong>
+                    <div id="gerador-dashboard-lines" class="gerador-sheet-lines"></div>
+                </article>
+                <button class="gerador-sheet-footer-alert" id="gerador-dashboard-footer" type="button">-</button>
+            </section>
+        </section>
+
+        <div id="gerador-alerts-modal" class="gerador-modal" hidden>
+            <div class="gerador-modal-backdrop" data-gerador-alerts-close></div>
+            <div class="panel gerador-modal-card gerador-modal-card-small">
+                <div class="panel-header">
+                    <div>
+                        <p class="section-kicker">Alertas</p>
+                        <h2>Resumo de alertas</h2>
+                    </div>
+                    <div class="actions-inline">
+                        <button class="ghost-button" type="button" data-gerador-alerts-close>Fechar</button>
+                    </div>
+                </div>
+                <div id="gerador-alerts-summary" class="employees-summary">-</div>
+                <div id="gerador-alerts-list" class="history-results"></div>
+            </div>
+        </div>
+
+        <section id="gerador-tab-geradores" class="gerador-tab-panel">
+            <section class="gerador-hero-grid">
+                <article class="panel gerador-overview-panel">
+                    <div class="gerador-dashboard-title">Painel tecnico de acompanhamento</div>
+                    <div id="gerador-status" class="gerador-status-board"></div>
+                </article>
+            </section>
+        </section>
+
+        <div id="gerador-register-modal" class="gerador-modal" hidden>
+            <div class="gerador-modal-backdrop" data-gerador-register-close></div>
+            <div class="panel gerador-modal-card">
+                <div class="panel-header">
+                    <div>
+                        <p class="section-kicker">Cadastro</p>
+                        <h2 id="gerador-register-title">Registrar gerador</h2>
+                    </div>
+                    <div class="actions-inline">
+                        <button id="gerador-open-horimetro" class="ghost-button" type="button" hidden>Ajustar horimetro</button>
+                        <button id="gerador-register-cancel" class="ghost-button" type="button">Fechar</button>
+                    </div>
+                </div>
+                <form id="gerador-register-form" class="movement-form" autocomplete="off">
+                    <input id="gerador-register-original" type="hidden">
+                    <label class="field field-span-2">
+                        <span>Nome do gerador</span>
+                        <input id="gerador-register-nome" type="text" placeholder="Ex.: Gerador Novo" required>
+                    </label>
+                    <label class="field">
+                        <span>Horimetro inicial</span>
+                        <input id="gerador-register-horimetro" type="number" step="0.01" min="0" required>
+                    </label>
+                    <label class="field">
+                        <span>Intervalo oleo (dias)</span>
+                        <input id="gerador-register-oleo-dias" type="number" step="1" min="1" value="180" required>
+                    </label>
+                    <label class="field">
+                        <span>Intervalo geral (dias)</span>
+                        <input id="gerador-register-geral-dias" type="number" step="1" min="1" value="180" required>
+                    </label>
+                    <label class="field">
+                        <span>Preventiva por horas</span>
+                        <input id="gerador-register-preventiva-horas" type="number" step="0.01" min="1" value="250" required>
+                    </label>
+                    <label class="field">
+                        <span>Arrefecimento (dias)</span>
+                        <input id="gerador-register-arrefecimento-dias" type="number" step="1" min="1" value="730" required>
+                    </label>
+                    <div class="form-footer">
+                        <p id="gerador-register-summary" class="employees-summary">Cria o gerador no painel e prepara os intervalos de manutencao.</p>
+                        <button id="gerador-register-submit" class="primary-button" type="submit">Registrar gerador</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="gerador-horimetro-modal" class="gerador-modal" hidden>
+            <div class="gerador-modal-backdrop" data-gerador-horimetro-close></div>
+            <div class="panel gerador-modal-card gerador-modal-card-small">
+                <div class="panel-header">
+                    <div>
+                        <p class="section-kicker">Operacao</p>
+                        <h2>Ajustar horimetro</h2>
+                    </div>
+                    <button id="gerador-horimetro-cancel" class="ghost-button" type="button">Fechar</button>
+                </div>
+                <form id="gerador-horimetro-form" class="movement-form" autocomplete="off">
+                    <label class="field">
+                        <span>Gerador</span>
+                        <select id="gerador-horimetro-gerador" required></select>
+                    </label>
+                    <label class="field">
+                        <span>Data</span>
+                        <input id="gerador-horimetro-data" type="date" required>
+                    </label>
+                    <label class="field">
+                        <span>Novo horimetro</span>
+                        <input id="gerador-horimetro-valor" type="number" step="0.01" min="0" required>
+                    </label>
+                    <label class="field">
+                        <span>Responsavel</span>
+                        <input id="gerador-horimetro-responsavel" type="text" placeholder="Ex.: Operacao">
+                    </label>
+                    <label class="field field-span-2">
+                        <span>Observacao</span>
+                        <input id="gerador-horimetro-observacao" type="text" placeholder="Ajuste de leitura, troca de painel, conferencia...">
+                    </label>
+                    <div class="form-footer">
+                        <p class="employees-summary">Atualiza a leitura atual e registra a acao na auditoria.</p>
+                        <button class="primary-button" type="submit">Salvar ajuste</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <section id="gerador-tab-lancamentos" class="gerador-tab-panel">
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <p class="section-kicker">Lancamentos</p>
+                        <h2>Diario recente</h2>
+                    </div>
+                </div>
+                <form id="gerador-lancamento-form" class="movement-form" autocomplete="off">
+                    <label class="field">
+                        <span>Gerador</span>
+                        <select id="gerador-lancamento-gerador" required></select>
+                    </label>
+                    <label class="field">
+                        <span>Data</span>
+                        <input id="gerador-lancamento-data" type="date" required>
+                    </label>
+                    <label class="field">
+                        <span>Hora inicio</span>
+                        <input id="gerador-lancamento-inicio" type="time" required>
+                    </label>
+                    <label class="field">
+                        <span>Hora fim</span>
+                        <input id="gerador-lancamento-fim" type="time" required>
+                    </label>
+                    <label class="field">
+                        <span>Horimetro inicio</span>
+                        <input id="gerador-lancamento-hori-inicio" type="text" readonly required>
+                    </label>
+                    <label class="field">
+                        <span>Horimetro fim</span>
+                        <input id="gerador-lancamento-hori-fim" type="text" readonly required>
+                    </label>
+                    <label class="field">
+                        <span>Responsavel</span>
+                        <input id="gerador-lancamento-responsavel" type="text" placeholder="Ex.: Operador">
+                    </label>
+                    <label class="field field-span-2">
+                        <span>Observacoes</span>
+                        <input id="gerador-lancamento-observacoes" type="text" placeholder="Uso em campo, teste, emergencia...">
+                    </label>
+                    <div class="form-footer">
+                        <p class="employees-summary">As horas trabalhadas sao calculadas automaticamente.</p>
+                        <button class="primary-button" type="submit">Registrar lancamento</button>
+                    </div>
+                </form>
+                <div id="gerador-lancamentos" class="history-results"></div>
+            </section>
+        </section>
+
+        <section id="gerador-tab-manutencoes" class="gerador-tab-panel">
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <p class="section-kicker">Manutencoes</p>
+                        <h2>Controle preventivo</h2>
+                    </div>
+                </div>
+                <form id="gerador-manutencao-form" class="movement-form" autocomplete="off">
+                    <label class="field">
+                        <span>Gerador</span>
+                        <select id="gerador-manutencao-gerador" required></select>
+                    </label>
+                    <label class="field">
+                        <span>Tipo</span>
+                        <select id="gerador-manutencao-tipo" required>
+                            <option value="">Selecionar</option>
+                            <option value="oleo">Troca de oleo</option>
+                            <option value="geral">Preventiva geral</option>
+                            <option value="arrefecimento">Arrefecimento</option>
+                        </select>
+                    </label>
+                    <label class="field">
+                        <span>Data</span>
+                        <input id="gerador-manutencao-data" type="date" required>
+                    </label>
+                    <label class="field">
+                        <span>Horimetro atual</span>
+                        <input id="gerador-manutencao-horimetro" type="text" readonly required>
+                    </label>
+                    <label class="field">
+                        <span>Responsavel</span>
+                        <input id="gerador-manutencao-responsavel" type="text" placeholder="Ex.: Tecnico">
+                    </label>
+                    <label class="field field-span-2">
+                        <span>Observacao</span>
+                        <input id="gerador-manutencao-observacao" type="text" placeholder="Servico executado, pecas trocadas, conferencia...">
+                    </label>
+                    <div class="form-footer">
+                        <p class="employees-summary">Atualiza os marcos de manutencao e recalcula os alertas do painel.</p>
+                        <button class="primary-button" type="submit">Registrar manutencao</button>
+                    </div>
+                </form>
+                <div id="gerador-manutencoes" class="history-results"></div>
+            </section>
+        </section>
+
+        <section id="gerador-tab-auditoria" class="gerador-tab-panel">
+            <section class="gerador-hero-grid">
+                <section class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <p class="section-kicker">Auditoria</p>
+                            <h2>Eventos do sistema</h2>
+                        </div>
+                    </div>
+                    <div id="gerador-auditoria" class="history-results"></div>
+                </section>
+            </section>
+        </section>
+    </main>
+    <script src="./gerador-data.js"></script>
+    <script src="./gerador.js"></script>
+    <script src="./module-nav.js"></script>
+</body>
+</html>
